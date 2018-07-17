@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_definition"
+            android:icon="@mipmap/definition"
+            android:title="@string/definition" />
+        <item
+            android:id="@+id/nav_challenges"
+            android:icon="@mipmap/challenges"
+            android:title="@string/challenges" />
+        <item
+            android:id="@+id/nav_dataquiz"
+            android:icon="@mipmap/dataquiz"
+            android:title="@string/dataquiz" />
+        <item
+            android:id="@+id/nav_chancesrisks"
+            android:icon="@mipmap/chancesrisks"
+            android:title="@string/chancesrisks" />
+    </group>
+</menu>

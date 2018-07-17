@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BigDataLernprogramm</string>
+    <string name="header_title">Bitte wählen Sie eine Lerneinheit aus.</string>
+    <string name="definition">Big Data: Begriffsklärung</string>
+    <string name="challenges">Big Data in der Praxis</string>
+    <string name="dataquiz">Datenschutzquiz</string>
+    <string name="chancesrisks">Chancen und Risiken</string>
+</resources>
