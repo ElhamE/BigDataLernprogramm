@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.elham.bigdatalernprogramm.begriffsklaerung.Example;
 import com.example.elham.bigdatalernprogramm.begriffsklaerung.BegriffsklaerungMenu;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
                 fragmentClass = BegriffsklaerungMenu.class;
                 break;
             case R.id.nav_challenges:
-                fragmentClass = BegriffsklaerungMenu.class;
+                fragmentClass = Example.class;
                 break;
             case R.id.nav_dataquiz:
-                fragmentClass = BegriffsklaerungMenu.class;
+                fragmentClass = Example.class;
                 break;
             case R.id.nav_chancesrisks:
-                fragmentClass = BegriffsklaerungMenu.class;
+                fragmentClass = Example.class;
                 break;
             default:
-                fragmentClass = BegriffsklaerungMenu.class;
+                fragmentClass = Example.class;
         }
 
         try {

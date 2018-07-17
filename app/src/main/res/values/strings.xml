@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">BigDataLernprogramm</string>
-    <string name="header_title">Bitte wählen Sie eine Lerneinheit aus.</string>
+    <string name="header_title">Bitte wähle eine Lerneinheit aus.</string>
     <string name="definition">Big Data: Begriffsklärung</string>
     <string name="challenges">Big Data in der Praxis</string>
     <string name="dataquiz">Datenschutzquiz</string>
     <string name="chancesrisks">Chancen und Risiken</string>
+
+    <string-array name="Begriffsklaerung_Menu">
+        <item>Das V-Modell</item>
+        <item>Begriffsabgrenzung</item>
+        <item>Teste dein Wissen!</item>
+    </string-array>
 </resources>
