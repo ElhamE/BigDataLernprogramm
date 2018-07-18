@@ -5,7 +5,10 @@ package com.example.elham.bigdatalernprogramm.begriffsklaerung;
  * (https://www.sourcecodester.com/android/12062/android-simple-quiz-app.html).
  */
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
 
     private Question question = new Question();
     private String answer;
+    private int answerIndex;
     private int questionIndex;
 
     @Override
@@ -44,6 +48,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         mButton4 = getActivity().findViewById(R.id.antwort4button);
         mButton4.setOnClickListener(this);
         mTextView = getActivity().findViewById(R.id.frage);
+
         questionIndex = 0;
         NextQuestion(questionIndex);
     }
@@ -60,6 +65,17 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
+        //lock the buttons
+        for (Button b : buttons) {
+            b.setClickable(false);
+        }
+
+        final int defaultColor = getResources().getColor(R.color.colorDefault);
+        final int paddingLeft = mButton1.getPaddingLeft(), paddingRight = mButton1.getPaddingRight(),
+                paddingTop = mButton1.getPaddingTop(), paddingBottom = mButton1.getPaddingBottom();
+
+        //Is the clicked button the correct answer
         switch (v.getId()){
             case R.id.antwort1button:
                 if(mButton1.getText() == answer){
@@ -67,8 +83,8 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
+                    mButton1.setBackgroundColor(Color.RED);
                 }
-                NextQuestion(++questionIndex);
                 break;
 
             case R.id.antwort2button:
@@ -77,8 +93,8 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
+                    mButton2.setBackgroundColor(Color.RED);
                 }
-                NextQuestion(++questionIndex);
                 break;
 
             case R.id.antwort3button:
@@ -87,8 +103,8 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
+                    mButton3.setBackgroundColor(Color.RED);
                 }
-                NextQuestion(++questionIndex);
                 break;
 
             case R.id.antwort4button:
@@ -97,14 +113,41 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
+                    mButton4.setBackgroundColor(Color.RED);
                 }
-                NextQuestion(++questionIndex);
                 break;
         }
+        //Show the correct answer and wait
+        Button answerButton = buttons[answerIndex];
+        answerButton.setBackgroundColor(Color.GREEN);
+        //reset and unlock buttons in a different Thread
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (Button b : buttons) {
+                    b.setClickable(true);
+                    b.setBackgroundColor(defaultColor);
+                }
+            }
+        }, 2000);
+        //wait until the reset ends and continue the quiz
+        new CountDownTimer(2000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //do nothing
+            }
+            public void onFinish() {
+                NextQuestion(++questionIndex);
+            }
+        }.start();
     }
 
+
+
+
     private void NextQuestion(int num){
-        if (num == question.questions.length){
+        if (num == question.getQuestions().length){
             //TODO AUFHÖREN
             questionIndex  = 0;
             num = 0;
@@ -115,6 +158,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         mButton3.setText(question.getchoice3(num));
         mButton4.setText(question.getchoice4(num));
         answer = question.getCorrectAnswer(num);
+        answerIndex = question.getCorrectAnswerIndex(num);
     }
 
 }

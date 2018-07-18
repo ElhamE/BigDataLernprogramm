@@ -12,5 +12,4 @@
     <style name="CustomAccentOverlay" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">@color/colorDefault</item>
     </style>
-
 </resources>

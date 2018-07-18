@@ -4,8 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <!-- Für die Spiele -->
+    <!-- Für das Quiz -->
     <color name="colorDefault">#2c6bca</color>
-    <color name="colorRichtig">#56ff40</color>
-    <color name="colorFalsch">#ff404d</color>
 </resources>

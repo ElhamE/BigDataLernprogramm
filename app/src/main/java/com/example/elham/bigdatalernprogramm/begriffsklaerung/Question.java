@@ -1,5 +1,7 @@
 package com.example.elham.bigdatalernprogramm.begriffsklaerung;
 
+import java.util.Arrays;
+
 /**
  * Main source code taken from Arvin
  * (https://www.sourcecodester.com/android/12062/android-simple-quiz-app.html).
@@ -7,20 +9,24 @@ package com.example.elham.bigdatalernprogramm.begriffsklaerung;
 
 public class Question {
 
-    public String questions[] = {
+    private String questions[] = {
             "Which is a Programming Language?",
             "Programming language COBOL works best for use in?"
     };
 
-    public String choices[][] = {
+    private String choices[][] = {
             {"HTML", "CSS", "Vala", "PHP"},
             {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
     };
 
-    public String correctAnswer[] = {
-        "PHP",
-        "Commercial Applications"
+    private String correctAnswer[] = {
+            "PHP",
+            "Commercial Applications"
     };
+
+    public String[] getQuestions(){
+        return questions;
+    }
 
     public String getQuestion(int a){
         String question = questions[a];
@@ -50,5 +56,12 @@ public class Question {
     public String getCorrectAnswer(int a){
         String answer = correctAnswer[a];
         return answer;
+    }
+
+    public int getCorrectAnswerIndex(int a){
+        String answer = getCorrectAnswer(a);
+        String[] answers = choices[a];
+        int index = Arrays.asList(answers).indexOf(answer);
+        return index;
     }
 }
