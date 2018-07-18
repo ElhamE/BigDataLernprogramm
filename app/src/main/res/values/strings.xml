@@ -1,4 +1,5 @@
 <resources>
+    <!-- Navigation (allgemein) -->
     <string name="app_name">BigDataLernprogramm</string>
     <string name="header_title">Bitte wähle eine Lerneinheit aus.</string>
     <string name="definition">Big Data: Begriffsklärung</string>
@@ -6,9 +7,39 @@
     <string name="dataquiz">Datenschutzquiz</string>
     <string name="chancesrisks">Chancen und Risiken</string>
 
+    <!-- Navigation (in der entsprechenden Lerneinheit -->
     <string-array name="Begriffsklaerung_Menu">
         <item>Das V-Modell</item>
         <item>Begriffsabgrenzung</item>
         <item>Teste dein Wissen!</item>
     </string-array>
+
+
+
+
+    <!-- Text für Begriffsklärungsmodul -->
+    <string name="VModell_introduction">
+        In den letzten Jahrzehnten hat sich das Internet von einem Forschungsnetz zu einem weltumspannenden Kommunikationsnetz entwickelt. Während dieser Zeitspanne sind eine Vielzahl von Diensten und Anwendungen entstanden, die insbesondere auch auf mobilen Endgeräten nicht mehr aus dem alltäglichen Leben wegzudenken sind. Laut einer aktuellen Studie der International Telecommunication Union (ITU) [1] gibt es derzeit circa sechs Milliarden Mobilfunkteilnehmer, was einem Prozentsatz von 85,7 der Weltbevölkerung entspricht. Der Prozentsatz der aktiven mobilen Teilnehmer mit Zugang zu Breitband-Netzen beläuft sich immerhin noch auf 15,7 Prozent der Weltbevölkerung oder 1,1 Milliarden Menschen. Inklusive Haushalten mit kabelgebundenen Internetanschluss nutzen 32,5 Prozent der Weltbevölkerung oder 2,3 Milliarden Menschen das Internet.
+    </string>
+    <string name="VModell_title1">Volume</string>
+    <string name="VModell_title2">Velocity</string>
+    <string name="VModell_title3">Variety</string>
+    <string name="VModell_title4">Veracity</string>
+    <string name="VModell_title5">Value</string>
+    <string name="VModell_description1">
+        Bla
+    </string>
+    <string name="VModell_description2">
+        Blub
+    </string>
+    <string name="VModell_description3">
+
+    </string>
+    <string name="VModell_description4">
+
+    </string>
+    <string name="VModell_description5">
+
+    </string>
+
 </resources>

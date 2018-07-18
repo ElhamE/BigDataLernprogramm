@@ -31,12 +31,21 @@ public class BegriffsklaerungMenu extends ListFragment implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //Tausche Fragment aus
+        //replace fragment
         Class fragmentClass;
         Fragment fragment;
         switch(position){
+            //V-Modell
             case 0:
-                fragmentClass = Example.class;
+                fragmentClass = VModell.class;
+                break;
+            //Begriffsabgrenzung
+            case 1:
+                fragmentClass = VModell.class;
+                break;
+            //Test
+            case 2:
+                fragmentClass = VModell.class;
                 break;
             default:
                 fragmentClass = BegriffsklaerungMenu.class;
@@ -45,6 +54,9 @@ public class BegriffsklaerungMenu extends ListFragment implements AdapterView.On
             fragment = (Fragment) fragmentClass.newInstance();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            // Set action bar title
+            String[] titleArray = getResources().getStringArray(R.array.Begriffsklaerung_Menu);
+            getActivity().setTitle(titleArray[position]);
         }
         catch (Exception e) {
             e.printStackTrace();
