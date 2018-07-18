@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 
 import com.example.elham.bigdatalernprogramm.R;
 
-public class VModell extends Fragment {
+public class Begriffsabgrenzung extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.vmodell, container, false);
+        View rootView = inflater.inflate(R.layout.begriffsabgrenzung, container, false);
         return rootView;
     }
 }

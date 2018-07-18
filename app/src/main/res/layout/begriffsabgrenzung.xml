@@ -19,44 +19,63 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_introduction"/>
+            android:text="@string/Begriffsabgrenzung_introduction"/>
 
         <TextView
-            android:id="@+id/volumeTitle"
+            android:id="@+id/CCTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title1"/>
+            android:text="@string/Begriffsabgrenzung_title1"/>
 
         <TextView
-            android:id="@+id/volumeDescription"
+            android:id="@+id/CCDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:padding="10dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description1"/>
+            android:text="@string/Begriffsabgrenzung_description1"/>
 
         <TextView
-            android:id="@+id/velocityTitle"
+            android:id="@+id/IoTTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title2"/>
+            android:text="@string/Begriffsabgrenzung_title2"/>
 
         <TextView
-            android:id="@+id/velocityDescription"
+            android:id="@+id/IoTDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:padding="10dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description2"/>
+            android:text="@string/Begriffsabgrenzung_description2"/>
+
+        <TextView
+            android:id="@+id/BITitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/Begriffsabgrenzung_title3"/>
+
+        <TextView
+            android:id="@+id/BIDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:justificationMode="inter_word"
+            android:text="@string/Begriffsabgrenzung_description3"/>
     </LinearLayout>
 </ScrollView>

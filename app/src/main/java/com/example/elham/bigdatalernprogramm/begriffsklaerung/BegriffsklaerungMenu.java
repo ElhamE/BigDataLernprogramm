@@ -3,6 +3,7 @@ package com.example.elham.bigdatalernprogramm.begriffsklaerung;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import com.example.elham.bigdatalernprogramm.R;
 
 public class BegriffsklaerungMenu extends ListFragment implements AdapterView.OnItemClickListener {
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,11 +43,11 @@ public class BegriffsklaerungMenu extends ListFragment implements AdapterView.On
                 break;
             //Begriffsabgrenzung
             case 1:
-                fragmentClass = VModell.class;
+                fragmentClass = Begriffsabgrenzung.class;
                 break;
             //Test
             case 2:
-                fragmentClass = VModell.class;
+                fragmentClass = TesteWissen.class;
                 break;
             default:
                 fragmentClass = BegriffsklaerungMenu.class;
@@ -53,7 +55,8 @@ public class BegriffsklaerungMenu extends ListFragment implements AdapterView.On
         try {
             fragment = (Fragment) fragmentClass.newInstance();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             // Set action bar title
             String[] titleArray = getResources().getStringArray(R.array.Begriffsklaerung_Menu);
             getActivity().setTitle(titleArray[position]);

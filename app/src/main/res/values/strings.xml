@@ -42,4 +42,20 @@
 
     </string>
 
+    <!-- Text für Begrriffsagbrenzung -->
+    <string name="Begriffsabgrenzung_introduction">
+        Hahahahaha
+    </string>
+    <string name="Begriffsabgrenzung_title1">Cloud-Computing</string>
+    <string name="Begriffsabgrenzung_title2">Internet of Things</string>
+    <string name="Begriffsabgrenzung_title3">Business Intelligence</string>
+    <string name="Begriffsabgrenzung_description1">
+        Bla
+    </string>
+    <string name="Begriffsabgrenzung_description2">
+        Blub
+    </string>
+    <string name="Begriffsabgrenzung_description3">
+        Blob
+    </string>
 </resources>
