@@ -1,4 +1,4 @@
-package com.example.elham.bigdatalernprogramm.begriffsklaerung;
+package com.example.elham.bigdatalernprogramm.datenschutzquiz;
 
 /**
  * Main source code taken from Arvin
@@ -19,20 +19,22 @@ import android.widget.TextView;
 
 import com.example.elham.bigdatalernprogramm.R;
 
-public class TesteWissen extends Fragment implements View.OnClickListener {
-    Button mButton1, mButton2, mButton3, mButton4;
-    TextView mTextView;
+public class Datenschutzquiz extends Fragment implements View.OnClickListener {
+    Button mButton1, mButton2, mButton3, mButton4, mJokerButton;
+    TextView mFrageLoesungText, mRangText;
 
-    private Question question = new Question();
+    private DatenschutzQuestion question = new DatenschutzQuestion();
     private String answer;
     private int answerIndex;
     private int questionIndex;
+
+    private int anzahlKorrekterAntworten;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.begriffsklaerungquiz, container, false);
+        View rootView = inflater.inflate(R.layout.datenschutzquiz, container, false);
         return rootView;
     }
 
@@ -47,21 +49,45 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         mButton3.setOnClickListener(this);
         mButton4 = getActivity().findViewById(R.id.antwort4button);
         mButton4.setOnClickListener(this);
-        mTextView = getActivity().findViewById(R.id.frage_loesung);
+
         questionIndex = 0;
+
+        mJokerButton = getActivity().findViewById(R.id.joker);
+        mJokerButton.setOnClickListener(this);
+        mJokerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
+                final Drawable defaultBackground = mButton4.getBackground();
+
+                //disable the joker
+                //mJokerButton.setEnabled(false);
+                //disable two wrong answers
+                int[] indexes = question.getTwoIndexesOfWrongAnswers(questionIndex);
+                //alternative solution because setEnable(true) leads to an UI bug
+                buttons[indexes[0]].setClickable(false);
+                buttons[indexes[0]].setBackgroundResource(R.color.colorJoker);
+                buttons[indexes[1]].setClickable(false);
+                buttons[indexes[1]].setBackgroundResource(R.color.colorJoker);
+            }
+        });
+        mRangText = getActivity().findViewById(R.id.rang);
+
+        mFrageLoesungText = getActivity().findViewById(R.id.frage_loesung);
         NextQuestion(questionIndex);
     }
 
     public void richtigeAntwort(){
+        ++anzahlKorrekterAntworten;
         String loesungssatz = getString(R.string.richtigeAntwort);
-        mTextView.setText(loesungssatz);
-        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+        mFrageLoesungText.setText(loesungssatz);
+        mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     public void falscheAntwort(){
         String loesungssatz = getString(R.string.falscheAntwort, answer);
-        mTextView.setText(loesungssatz);
-        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+        mFrageLoesungText.setText(loesungssatz);
+        mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     @Override
@@ -72,9 +98,8 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
             b.setClickable(false);
         }
         final Drawable defaultBackground = v.getBackground();
-
-        //Is the clicked button the correct answer
         switch (v.getId()){
+            //Is the clicked button the correct answer
             case R.id.antwort1button:
                 if(mButton1.getText() == answer){
                     richtigeAntwort();
@@ -125,7 +150,8 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
             public void run() {
                 for (Button b : buttons) {
                     b.setBackgroundDrawable(defaultBackground);
-                    mTextView.setTypeface(null, Typeface.BOLD);
+                    mFrageLoesungText.setTypeface(null, Typeface.BOLD);
+                    b.setEnabled(true);
                     b.setClickable(true);
                 }
             }
@@ -149,13 +175,34 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
             questionIndex  = 0;
             num = 0;
         }
-        mTextView.setText(question.getQuestion(num));
+        mRangText.setText(werteAntwortenAus());
+        mFrageLoesungText.setText(question.getQuestion(num));
         mButton1.setText(question.getchoice1(num));
         mButton2.setText(question.getchoice2(num));
         mButton3.setText(question.getchoice3(num));
         mButton4.setText(question.getchoice4(num));
         answer = question.getCorrectAnswer(num);
         answerIndex = question.getCorrectAnswerIndex(num);
+    }
+
+    private String werteAntwortenAus() {
+        String result = "Dein Rang: ";
+        if (anzahlKorrekterAntworten == 15){
+            result += "Skynet, bist du's?";
+        }
+        else if (anzahlKorrekterAntworten >= 10){
+            result += "Datenschutzexperte";
+        }
+        else if (anzahlKorrekterAntworten >= 5){
+            result += "Immerhin etwas";
+        }
+        else if (anzahlKorrekterAntworten > 0){
+            result += "Hör auf zu raten!";
+        }
+        else{
+            result += "Hast du schon angefangen?";
+        }
+        return result;
     }
 
 }

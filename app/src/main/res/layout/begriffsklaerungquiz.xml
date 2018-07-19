@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_marginTop="?attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="@string/quiz_introduction"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/frage_loesung"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:minHeight="70dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:minHeight="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/antwort1button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:theme="@style/CustomAccentOverlay" />
+
+                <Button
+                    android:id="@+id/antwort3button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:theme="@style/CustomAccentOverlay" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/antwort2button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:theme="@style/CustomAccentOverlay" />
+
+                <Button
+                    android:id="@+id/antwort4button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:theme="@style/CustomAccentOverlay" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.elham.bigdatalernprogramm.begriffsklaerung.BegriffsklaerungMenu;
+import com.example.elham.bigdatalernprogramm.datenschutzquiz.Datenschutzquiz;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentClass = BegriffsklaerungMenu.class;
                 break;
             case R.id.nav_dataquiz:
-                fragmentClass = BegriffsklaerungMenu.class;
+                fragmentClass = Datenschutzquiz.class;
                 break;
             case R.id.nav_chancesrisks:
                 fragmentClass = BegriffsklaerungMenu.class;

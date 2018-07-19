@@ -1,4 +1,4 @@
-package com.example.elham.bigdatalernprogramm.begriffsklaerung;
+package com.example.elham.bigdatalernprogramm.praxis;
 
 /**
  * Main source code taken from Arvin
@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.example.elham.bigdatalernprogramm.R;
 
-public class TesteWissen extends Fragment implements View.OnClickListener {
+public class TestePraxiswissen extends Fragment implements View.OnClickListener {
     Button mButton1, mButton2, mButton3, mButton4;
     TextView mTextView;
 

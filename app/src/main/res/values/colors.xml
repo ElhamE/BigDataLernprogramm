@@ -8,4 +8,6 @@
     <color name="colorDefault">#2c6bca</color>
     <color name="colorFalse">#ff0d00</color>
     <color name="colorCorrect">#2bff00</color>
+    <color name="colorJoker">#b8b8b8</color>
+
 </resources>
