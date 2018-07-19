@@ -16,18 +16,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingLeft="10dp"
-            android:text="quiz_beschreibung"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:text="@string/quiz_introduction"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/frage"
+            android:id="@+id/frage_loesung"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:minHeight="70dp"
             android:paddingLeft="10dp"
-            android:text="stringFrage/Lösung"
+            android:textStyle="bold"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -49,7 +50,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Antwort1"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:theme="@style/CustomAccentOverlay" />
@@ -60,7 +60,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Antwort3"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:theme="@style/CustomAccentOverlay" />
@@ -78,7 +77,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Antwort2"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:theme="@style/CustomAccentOverlay" />
@@ -89,7 +87,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Antwort4"
                     android:textAllCaps="false"
                     android:textSize="16sp"
                     android:theme="@style/CustomAccentOverlay" />

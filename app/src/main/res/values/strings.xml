@@ -42,7 +42,6 @@
 
     </string>
 
-    <!-- Text für Begrriffsagbrenzung -->
     <string name="Begriffsabgrenzung_introduction">
         Hahahahaha
     </string>
@@ -58,4 +57,12 @@
     <string name="Begriffsabgrenzung_description3">
         Blob
     </string>
+
+    <string name="falscheAntwort" formatted="true">Falsch! Die richtige Antwort lautet %1$s.</string>
+    <string name="richtigeAntwort">Das ist korrekt!</string>
+    <string name="quiz_introduction">
+        Der VfB wollte sich gegenüber dem Rundfunksender nicht zu dem Bericht äußern. „Momentan bin ich in Stuttgart. Dort bin ich glücklich. Ich weiß noch nicht, wo ich in Zukunft spiele“, hatte Pavard am Mittwoch noch gegenüber Medienvertretern in seiner Heimat bei den Feierlichkeiten zum WM-Sieg gesagt.
+Als Nachfolger sollen die Stuttgarter laut der „Bild“-Zeitung Interesse an einem Weltmeister von 2014 haben. Demnach könnte Benedikt Höwedes (30), der nach seiner Leihe zu Juventus Turin jüngst zum FC Schalke 04 zurückkehrte, die entstehende Lücke im VfB-Kader füllen. Zur kompletten News.
+    </string>
+
 </resources>

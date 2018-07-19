@@ -5,7 +5,9 @@ package com.example.elham.bigdatalernprogramm.begriffsklaerung;
  * (https://www.sourcecodester.com/android/12062/android-simple-quiz-app.html).
  */
 
-import android.graphics.Color;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -15,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.elham.bigdatalernprogramm.R;
 
@@ -47,20 +48,21 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         mButton3.setOnClickListener(this);
         mButton4 = getActivity().findViewById(R.id.antwort4button);
         mButton4.setOnClickListener(this);
-        mTextView = getActivity().findViewById(R.id.frage);
-
+        mTextView = getActivity().findViewById(R.id.frage_loesung);
         questionIndex = 0;
         NextQuestion(questionIndex);
     }
 
     public void richtigeAntwort(){
-        //TODO Farbe
-        Toast.makeText(getActivity(), "Richtig", Toast.LENGTH_SHORT).show();
+        String loesungssatz = getString(R.string.richtigeAntwort);
+        mTextView.setText(loesungssatz);
+        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     public void falscheAntwort(){
-        //TODO FARBE
-        Toast.makeText(getActivity(), "Falsch", Toast.LENGTH_SHORT).show();
+        String loesungssatz = getString(R.string.falscheAntwort, answer);
+        mTextView.setText(loesungssatz);
+        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     @Override
@@ -70,10 +72,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         for (Button b : buttons) {
             b.setClickable(false);
         }
-
-        final int defaultColor = getResources().getColor(R.color.colorDefault);
-        final int paddingLeft = mButton1.getPaddingLeft(), paddingRight = mButton1.getPaddingRight(),
-                paddingTop = mButton1.getPaddingTop(), paddingBottom = mButton1.getPaddingBottom();
+        final Drawable defaultBackground = v.getBackground();
 
         //Is the clicked button the correct answer
         switch (v.getId()){
@@ -83,7 +82,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
-                    mButton1.setBackgroundColor(Color.RED);
+                    mButton1.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
@@ -93,7 +92,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
-                    mButton2.setBackgroundColor(Color.RED);
+                    mButton2.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
@@ -103,7 +102,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
-                    mButton3.setBackgroundColor(Color.RED);
+                    mButton3.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
@@ -113,26 +112,27 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 }
                 else{
                     falscheAntwort();
-                    mButton4.setBackgroundColor(Color.RED);
+                    mButton4.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
         }
         //Show the correct answer and wait
         Button answerButton = buttons[answerIndex];
-        answerButton.setBackgroundColor(Color.GREEN);
-        //reset and unlock buttons in a different Thread
+        answerButton.setBackgroundResource(R.color.colorCorrect);
+        //reset changes and unlock buttons in a different thread
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 for (Button b : buttons) {
+                    b.setBackgroundDrawable(defaultBackground);
+                    mTextView.setTypeface(null, Typeface.BOLD);
                     b.setClickable(true);
-                    b.setBackgroundColor(defaultColor);
                 }
             }
-        }, 2000);
+        }, 3000);
         //wait until the reset ends and continue the quiz
-        new CountDownTimer(2000, 1000) {
+        new CountDownTimer(3000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 //do nothing
@@ -142,8 +142,6 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
             }
         }.start();
     }
-
-
 
 
     private void NextQuestion(int num){
