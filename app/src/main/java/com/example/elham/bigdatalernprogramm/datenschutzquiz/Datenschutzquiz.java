@@ -5,12 +5,14 @@ package com.example.elham.bigdatalernprogramm.datenschutzquiz;
  * (https://www.sourcecodester.com/android/12062/android-simple-quiz-app.html).
  */
 
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,9 @@ import android.widget.TextView;
 import com.example.elham.bigdatalernprogramm.R;
 
 public class Datenschutzquiz extends Fragment implements View.OnClickListener {
+
+    private static final int JOKER_LIMIT = 3;
+
     Button mButton1, mButton2, mButton3, mButton4, mJokerButton;
     TextView mFrageLoesungText, mRangText;
 
@@ -27,8 +32,27 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     private String answer;
     private int answerIndex;
     private int questionIndex;
+    private int jokerCounter;
 
     private int anzahlKorrekterAntworten;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        //introduction dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage(getString(R.string.Begriffsabgrenzung_introduction));
+        builder.setCancelable(true);
+        builder.setNeutralButton(
+                getString(R.string.app_name),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,11 +81,12 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         mJokerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ++jokerCounter;
                 final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
                 final Drawable defaultBackground = mButton4.getBackground();
 
-                //disable the joker
-                //mJokerButton.setEnabled(false);
+                //disable the joker for this question
+                mJokerButton.setEnabled(false);
                 //disable two wrong answers
                 int[] indexes = question.getTwoIndexesOfWrongAnswers(questionIndex);
                 //alternative solution because setEnable(true) leads to an UI bug
@@ -174,6 +199,10 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
             //TODO AUFHÖREN
             questionIndex  = 0;
             num = 0;
+        }
+        //enable the joker if limit is not reached
+        if (jokerCounter < JOKER_LIMIT){
+            mJokerButton.setEnabled(true);
         }
         mRangText.setText(werteAntwortenAus());
         mFrageLoesungText.setText(question.getQuestion(num));
