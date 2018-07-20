@@ -14,7 +14,7 @@ public class TextPrediction extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.vmodell, container, false);
+        View rootView = inflater.inflate(R.layout.text_prediction, container, false);
         return rootView;
     }
 }

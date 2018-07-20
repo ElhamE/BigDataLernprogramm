@@ -14,6 +14,16 @@
         <item>Teste dein Wissen!</item>
     </string-array>
 
+    <string-array name="Chancen_und_Risiken_Menu">
+        <item>Wahrheit oder Fiktion</item>
+        <item>Persönlichkeitsprognose</item>
+    </string-array>
+
+    <string-array name="Praxis_Menu">
+        <item>Lebenszyklus &amp; Herausforderungen</item>
+        <item>Wissenstest</item>
+    </string-array>
+
 
 
 
@@ -65,7 +75,13 @@
 Als Nachfolger sollen die Stuttgarter laut der „Bild“-Zeitung Interesse an einem Weltmeister von 2014 haben. Demnach könnte Benedikt Höwedes (30), der nach seiner Leihe zu Juventus Turin jüngst zum FC Schalke 04 zurückkehrte, die entstehende Lücke im VfB-Kader füllen. Zur kompletten News.
     </string>
 
+
+
     <!-- Text für Datenschutzmodul -->
+    <string name="Datenschutzquiz_introduction">
+        Willkommen!
+    </string>
+    <string name="startQuiz">Beginne mit dem Quiz</string>
     <string name="joker">Streiche zwei falsche Antworten</string>
 
 </resources>

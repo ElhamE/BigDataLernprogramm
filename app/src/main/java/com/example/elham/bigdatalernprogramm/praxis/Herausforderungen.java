@@ -14,7 +14,7 @@ public class Herausforderungen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.vmodell, container, false);
+        View rootView = inflater.inflate(R.layout.herausforderungen, container, false);
         return rootView;
     }
 }

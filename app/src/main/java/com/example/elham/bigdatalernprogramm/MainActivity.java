@@ -12,11 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.elham.bigdatalernprogramm.begriffsklaerung.BegriffsklaerungMenu;
+import com.example.elham.bigdatalernprogramm.chancenundrisiken.ChancenUndRisikenMenu;
 import com.example.elham.bigdatalernprogramm.datenschutzquiz.Datenschutzquiz;
+import com.example.elham.bigdatalernprogramm.praxis.PraxisMenu;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+
+    private boolean datenschutzquizPicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
     }
 
+    //disable back key if Datenschutzquiz-Modul is picked
+    @Override
+    public void onBackPressed() {
+        if (!datenschutzquizPicked){
+            super.onBackPressed();
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -61,18 +73,23 @@ public class MainActivity extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_definition:
+                datenschutzquizPicked = false;
                 fragmentClass = BegriffsklaerungMenu.class;
                 break;
             case R.id.nav_challenges:
-                fragmentClass = BegriffsklaerungMenu.class;
+                datenschutzquizPicked = false;
+                fragmentClass = PraxisMenu.class;
                 break;
             case R.id.nav_dataquiz:
+                datenschutzquizPicked = true;
                 fragmentClass = Datenschutzquiz.class;
                 break;
             case R.id.nav_chancesrisks:
-                fragmentClass = BegriffsklaerungMenu.class;
+                datenschutzquizPicked = false;
+                fragmentClass = ChancenUndRisikenMenu.class;
                 break;
             default:
+                datenschutzquizPicked = false;
                 fragmentClass = BegriffsklaerungMenu.class;
         }
 

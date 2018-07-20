@@ -29,7 +29,7 @@ public class PraxisMenu extends ListFragment implements AdapterView.OnItemClickL
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.Begriffsklaerung_Menu, android.R.layout.simple_list_item_1);
+                R.array.Praxis_Menu, android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
@@ -40,17 +40,13 @@ public class PraxisMenu extends ListFragment implements AdapterView.OnItemClickL
         Class fragmentClass;
         Fragment fragment;
         switch(position){
-            //V-Modell
+            //Lebenszyklus & Herausforderungen
             case 0:
-                fragmentClass = VModell.class;
+                fragmentClass = Herausforderungen.class;
                 break;
-            //Begriffsabgrenzung
+            //Wissenstest
             case 1:
-                fragmentClass = Begriffsabgrenzung.class;
-                break;
-            //Test
-            case 2:
-                fragmentClass = TesteWissen.class;
+                fragmentClass = TestePraxiswissen.class;
                 break;
             default:
                 fragmentClass = PraxisMenu.class;
@@ -61,7 +57,7 @@ public class PraxisMenu extends ListFragment implements AdapterView.OnItemClickL
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             // Set action bar title
-            String[] titleArray = getResources().getStringArray(R.array.Begriffsklaerung_Menu);
+            String[] titleArray = getResources().getStringArray(R.array.Praxis_Menu);
             getActivity().setTitle(titleArray[position]);
         }
         catch (Exception e) {

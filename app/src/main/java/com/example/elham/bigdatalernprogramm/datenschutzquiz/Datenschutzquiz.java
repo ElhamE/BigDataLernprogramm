@@ -37,14 +37,22 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     private int anzahlKorrekterAntworten;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.datenschutzquiz, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
         //introduction dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(getString(R.string.Begriffsabgrenzung_introduction));
+        builder.setMessage(getString(R.string.Datenschutzquiz_introduction));
         builder.setCancelable(true);
         builder.setNeutralButton(
-                getString(R.string.app_name),
+                getString(R.string.startQuiz),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -52,14 +60,6 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 });
         AlertDialog alert = builder.create();
         alert.show();
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.datenschutzquiz, container, false);
-        return rootView;
     }
 
     @Override
@@ -102,14 +102,14 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         NextQuestion(questionIndex);
     }
 
-    public void richtigeAntwort(){
+    private void richtigeAntwort(){
         ++anzahlKorrekterAntworten;
         String loesungssatz = getString(R.string.richtigeAntwort);
         mFrageLoesungText.setText(loesungssatz);
         mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
-    public void falscheAntwort(){
+    private void falscheAntwort(){
         String loesungssatz = getString(R.string.falscheAntwort, answer);
         mFrageLoesungText.setText(loesungssatz);
         mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);

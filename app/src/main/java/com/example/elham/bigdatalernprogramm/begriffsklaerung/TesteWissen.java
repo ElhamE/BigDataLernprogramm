@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.elham.bigdatalernprogramm.R;
@@ -52,13 +53,13 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         NextQuestion(questionIndex);
     }
 
-    public void richtigeAntwort(){
+    private void richtigeAntwort(){
         String loesungssatz = getString(R.string.richtigeAntwort);
         mTextView.setText(loesungssatz);
         mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
-    public void falscheAntwort(){
+    private void falscheAntwort(){
         String loesungssatz = getString(R.string.falscheAntwort, answer);
         mTextView.setText(loesungssatz);
         mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
@@ -141,7 +142,6 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
             }
         }.start();
     }
-
 
     private void NextQuestion(int num){
         if (num == question.getQuestions().length){

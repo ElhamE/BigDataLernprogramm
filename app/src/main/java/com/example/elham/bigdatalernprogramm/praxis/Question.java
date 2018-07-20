@@ -10,8 +10,8 @@ import java.util.Arrays;
 public class Question {
 
     private String questions[] = {
-            "Which is a Programming Language?",
-            "Programming language COBOL works best for use in?"
+            "Praxis?",
+            "Wissen?"
     };
 
     private String choices[][] = {

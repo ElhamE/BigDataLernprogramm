@@ -15,8 +15,8 @@ public class WahroderFalschQuestion {
     };
 
     private String choices[][] = {
-            {"HTML", "CSS", "Vala", "PHP"},
-            {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+            {"HTML", "PHP"},
+            {"Siemens Applications", "Commercial Applications"}
     };
 
     private String correctAnswer[] = {

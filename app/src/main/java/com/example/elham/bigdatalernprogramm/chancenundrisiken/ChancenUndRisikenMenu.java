@@ -29,7 +29,7 @@ public class ChancenUndRisikenMenu extends ListFragment implements AdapterView.O
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.Begriffsklaerung_Menu, android.R.layout.simple_list_item_1);
+                R.array.Chancen_und_Risiken_Menu, android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
@@ -40,17 +40,13 @@ public class ChancenUndRisikenMenu extends ListFragment implements AdapterView.O
         Class fragmentClass;
         Fragment fragment;
         switch(position){
-            //V-Modell
+            //Wahrheit oder Fiktion
             case 0:
-                fragmentClass = VModell.class;
+                fragmentClass = WahroderFalschQuiz.class;
                 break;
-            //Begriffsabgrenzung
+            //Persönlichkeitsprognose
             case 1:
-                fragmentClass = Begriffsabgrenzung.class;
-                break;
-            //Test
-            case 2:
-                fragmentClass = TesteWissen.class;
+                fragmentClass = TextPrediction.class;
                 break;
             default:
                 fragmentClass = ChancenUndRisikenMenu.class;
@@ -61,7 +57,7 @@ public class ChancenUndRisikenMenu extends ListFragment implements AdapterView.O
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.replace(R.id.content_frame, fragment).addToBackStack(null).commit();
             // Set action bar title
-            String[] titleArray = getResources().getStringArray(R.array.Begriffsklaerung_Menu);
+            String[] titleArray = getResources().getStringArray(R.array.Chancen_und_Risiken_Menu);
             getActivity().setTitle(titleArray[position]);
         }
         catch (Exception e) {
