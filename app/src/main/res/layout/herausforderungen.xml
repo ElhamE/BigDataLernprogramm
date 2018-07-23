@@ -15,105 +15,99 @@
             android:id="@+id/introduction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_introduction"/>
+            android:text="@string/challenges_introduction"/>
 
         <TextView
             android:id="@+id/volumeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title1"/>
+            android:text="@string/challenges_title1"/>
 
         <TextView
             android:id="@+id/volumeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description1"/>
+            android:text="@string/challenges_description1"/>
 
         <TextView
             android:id="@+id/velocityTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title2"/>
+            android:text="@string/challenges_title2"/>
 
         <TextView
             android:id="@+id/velocityDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description2"/>
+            android:text="@string/challenges_description2"/>
 
         <TextView
             android:id="@+id/varietyTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title3"/>
+            android:text="@string/challenges_title3"/>
 
         <TextView
             android:id="@+id/varietyDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description3"/>
+            android:text="@string/challenges_description3"/>
 
         <TextView
             android:id="@+id/veracityTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="bla"/>
+            android:text="@string/challenges_title4"/>
 
         <TextView
             android:id="@+id/veracityDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="bla"/>
+            android:text="@string/challenges_description4"/>
 
         <TextView
             android:id="@+id/valueTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="bla"/>
+            android:text="@string/challenges_title5"/>
 
         <TextView
             android:id="@+id/valueDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="bla"/>
+            android:text="@string/challenges_description5"/>
     </LinearLayout>
 </ScrollView>

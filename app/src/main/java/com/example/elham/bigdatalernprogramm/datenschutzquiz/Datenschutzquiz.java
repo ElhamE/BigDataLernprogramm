@@ -126,7 +126,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             //Is the clicked button the correct answer
             case R.id.antwort1button:
-                if(mButton1.getText() == answer){
+                if(mButton1.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -136,7 +136,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort2button:
-                if(mButton2.getText() == answer){
+                if(mButton2.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -146,7 +146,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort3button:
-                if(mButton3.getText() == answer){
+                if(mButton3.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -156,7 +156,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort4button:
-                if(mButton4.getText() == answer){
+                if(mButton4.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -168,6 +168,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         //Show the correct answer and wait
         Button answerButton = buttons[answerIndex];
         answerButton.setBackgroundResource(R.color.colorCorrect);
+        mJokerButton.setClickable(false);
         //reset changes and unlock buttons in a different thread
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -176,8 +177,8 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 for (Button b : buttons) {
                     b.setBackgroundDrawable(defaultBackground);
                     mFrageLoesungText.setTypeface(null, Typeface.BOLD);
-                    b.setEnabled(true);
                     b.setClickable(true);
+                    mJokerButton.setClickable(true);
                 }
             }
         }, 3000);

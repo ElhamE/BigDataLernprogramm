@@ -15,8 +15,7 @@
             android:id="@+id/introduction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/Begriffsabgrenzung_introduction"/>
@@ -34,8 +33,7 @@
             android:id="@+id/CCDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/Begriffsabgrenzung_description1"/>
@@ -54,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/Begriffsabgrenzung_description2"/>
@@ -73,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/Begriffsabgrenzung_description3"/>

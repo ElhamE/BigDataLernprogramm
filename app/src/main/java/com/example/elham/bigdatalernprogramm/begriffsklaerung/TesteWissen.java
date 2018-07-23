@@ -79,7 +79,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
         //Is the clicked button the correct answer
         switch (v.getId()){
             case R.id.antwort1button:
-                if(mButton1.getText() == answer){
+                if(mButton1.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -89,7 +89,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort2button:
-                if(mButton2.getText() == answer){
+                if(mButton2.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -99,7 +99,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort3button:
-                if(mButton3.getText() == answer){
+                if(mButton3.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -109,7 +109,7 @@ public class TesteWissen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.antwort4button:
-                if(mButton4.getText() == answer){
+                if(mButton4.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{

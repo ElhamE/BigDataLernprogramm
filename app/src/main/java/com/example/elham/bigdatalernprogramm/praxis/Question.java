@@ -10,18 +10,21 @@ import java.util.Arrays;
 public class Question {
 
     private String questions[] = {
-            "Praxis?",
-            "Wissen?"
+            "Der Teil des Big Data-Prozesses, der üblicherweise am aufwändigsten ist, ist die ...",
+            "Kommen herkömmliche Datenverwaltungssysteme mit den Big Data-Anforderungen zurecht?",
+            "Die aus Big Data-Analysen folgendenden Ergebnisse sind stets korrekt"
     };
 
     private String choices[][] = {
-            {"HTML", "CSS", "Vala", "PHP"},
-            {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+            {"Interpretation", "Datenanoymisierung", "Datenvorverarbeitung", "Datensicherheit"},
+            {"Immer", "Nie", "Ja, wenn den Speicherplatz vergrößert.", "Nicht ganz, denn dafür sind sie nicht ausgerichtet."},
+            {"Ja, da es sich um mathematische Modelle handelt.", "Ja, da die Daten schon vorher von Fehler bereinigt worden sind.", "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden.", "Jein, da es sich um Stichproben handelt."}
     };
 
     private String correctAnswer[] = {
-            "PHP",
-            "Commercial Applications"
+            "Datenvorverarbeitung",
+            "Nicht ganz, denn dafür sind sie nicht ausgerichtet.",
+            "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden."
     };
 
     public String[] getQuestions(){

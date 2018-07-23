@@ -25,8 +25,6 @@
     </string-array>
 
 
-
-
     <!-- Text für Begriffsklärungsmodul -->
     <string name="VModell_introduction">
         Die Bezeichnung „Big Data“ besitzt derzeit noch keine allgemeine Definition. Ein üblicher Ansatz zur Charakterisierung dieses Begriffs ist das sogenannte "V-Modell".\nDieses soll nicht nur technische Aspekte berücksichtigen , da es falsch wäre, Big Data nur darauf zu beschränken, sondern auch die rechtlichen und gesellschaftlichen Auswirkungen betrachten, die dieses Phänomen mit sich bringt.
@@ -56,28 +54,66 @@
     </string>
 
     <string name="Begriffsabgrenzung_introduction">
-        Hahahahaha
+        Im Zusammenhang mit Big Data fallen manchmal auch andere Begriffe, die andere Konzepte meinen.\nDie folgenden Ausführungen sollen eine klare Unterscheidung ermöglichen.
     </string>
     <string name="Begriffsabgrenzung_title1">Cloud-Computing</string>
-    <string name="Begriffsabgrenzung_title2">Internet of Things</string>
-    <string name="Begriffsabgrenzung_title3">Business Intelligence</string>
+    <string name="Begriffsabgrenzung_title2">Internet of Things (IoT)</string>
+    <string name="Begriffsabgrenzung_title3">Business Intelligence (BI)</string>
     <string name="Begriffsabgrenzung_description1">
-        Bla
+        •	nachfragebasierte Bereitstellung von Rechenressourcen über das Internet\n\n
+        •	mit \"Rechenressourcen\" ist nicht nur Speicherplatz, sondern sind z.B. auch Server, Grafikkarten, usw. gemeint
+        •	die Abrechnung erfolgt i.d.R. auf der Basis des Nutzungsumfangs
     </string>
     <string name="Begriffsabgrenzung_description2">
-        Blub
+        •	Sensoren, die in allen Arten von Produkten, Geräten und Maschinen eingebettet und über ein Netzwerk verbunden sind \n\n
+        •	dadurch können jederzeit automatisch Daten, über sämtliche Dinge erhoben werden (z.B. Abstandsmessung zur Bremsassistenz)
     </string>
     <string name="Begriffsabgrenzung_description3">
-        Blob
+        •	Gesamtheit der systematischen Erfassung,  Speicherung, Auswertung und Darstellung von historische Daten\n\n
+        •	im Gegensatz zu Big Data ist hier das Ziel, überwiegend vorher definierte Fragen zu beantworten\n\n
+        •	ein weiterer Unterschied ist, dass Business Intelligence eher vergangenheitsorientiert ist
     </string>
 
     <string name="falscheAntwort" formatted="true">Falsch! Die richtige Antwort lautet \"%1$s\".</string>
     <string name="richtigeAntwort">Das ist korrekt!</string>
     <string name="quiz_introduction">
-        erst durch die Verarbeitung und Analyse kann der finanzielle Wert von Daten ausgeschöpft werden
+        Willkommen zum Übungsteil!\nBitte wähle für jede Aufgabe genau eine Lösung aus.
     </string>
-    <string name="quiz_finish" formatted="true">Du hast %1$d von %2$d Fragen richtig beantwortet.</string>
+    <string name="quiz_finish" formatted="true">Du hast %1$d von %2$d Aufgaben richtig gelöst.</string>
 
+
+    <!-- Text für das Praxismodul -->
+    <string name="challenges_introduction">
+        Big Data umfasst mehr als nur die Datenanalyse. Um diese erst durchführen zu können, müssen Daten beschafft und vorverarbeitet werden. Außerdem müssen Daten derartig analysiert werden, um Entscheidungsprozesse zu unterstützen.\nDiese ganzen Schritte, die alle Big Data-Prozesse durchlaufen, mitsamt deren Herausforderungen werden im sogenannten Big Data-Lebenszyklus dargestellt.\nDiese Lerneinheit soll das Thema \"Big Data\" aus anwenderorientierter Sicht beleuchten.
+    </string>
+    <string name="challenges_title1">Datenakquisition</string>
+    <string name="challenges_title2">Informationsextraktion &amp; Datenbereinigung</string>
+    <string name="challenges_title3">Vereinheitlichung von Daten</string>
+    <string name="challenges_title4">Modellierung &amp; Analyse</string>
+    <string name="challenges_title5">Interpretation</string>
+    <string name="challenges_description1">
+        •	Daten werden aus unterschiedlichen Quellen ggf. in Echtzeit erhoben\n\n
+        •	oft ist das Problem, dass Daten nicht oder nur unzureichend zur Verfügung stehen\n\n
+        •	außerdem muss geklärt werden, ob die Daten repräsentativ und für die angestrebten Zwecke verwandbar sind\n\n
+        •	hier kann es zu Interessenkonflikten zwischen den Verwendern und den Bereitstellern von Daten kommen (z.B. bezüglich der Privatsphäre)\n\n
+        •	der rechtliche Umfang der Datennutzung muss berücksichtigt werden
+    </string>
+    <string name="challenges_description2">
+        •	die erhobenen Daten werden derartig gefiltert, um relevante und unwichtige Daten voneinander zu trennen\n\n
+        •   fehlerhafte Daten müssen lokalisiert und bereinigt bzw. aussortiert werden
+    </string>
+    <string name="challenges_description3">
+        •   gesäuberte Daten aus verschiedensten Quellen müssen nun passend zusammengeführt werden (z.B. Integration von Tweets über das Wetter mit Sensordaten eines Wetterballons)\n\n
+        •   im Vergleich zu den herkömmlichen Datenbanksystemen müssen moderne Systeme in der Lage sein diese enormen und vielfältig strukturierten Daten effizient zu speichern bzw. zu verarbeiten
+    </string>
+    <string name="challenges_description4">
+        •   Analyseergebnisse müssen nach ihrer Nachvollziehbarkeit geprüft und bestätigt werden\n\n
+        •   das Analysemodell benötigt stets Rückmeldungen (z.B. über die Korrektheit der getroffenen Aussagen), um verbessert werden zu können
+    </string>
+    <string name="challenges_description5">
+        •   Analyseergebnisse werden zur Entscheidungsfindung herangezogen\n\n
+        •   deswegen ist eine übersichtlich aufbereitete und nachvollziehbare Darstellungsform dieser Ergebnisse maßgeblich
+    </string>
 
 
     <!-- Text für Datenschutzmodul -->

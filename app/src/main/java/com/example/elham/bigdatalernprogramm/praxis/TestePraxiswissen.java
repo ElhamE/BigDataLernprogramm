@@ -5,12 +5,13 @@ package com.example.elham.bigdatalernprogramm.praxis;
  * (https://www.sourcecodester.com/android/12062/android-simple-quiz-app.html).
  */
 
-import android.graphics.Typeface;
+import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
     private String answer;
     private int answerIndex;
     private int questionIndex;
+    private int correctAnswers;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,15 +55,14 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
     }
 
     public void richtigeAntwort(){
+        ++correctAnswers;
         String loesungssatz = getString(R.string.richtigeAntwort);
         mTextView.setText(loesungssatz);
-        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     public void falscheAntwort(){
         String loesungssatz = getString(R.string.falscheAntwort, answer);
         mTextView.setText(loesungssatz);
-        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
     }
 
     @Override
@@ -76,7 +77,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
         //Is the clicked button the correct answer
         switch (v.getId()){
             case R.id.antwort1button:
-                if(mButton1.getText() == answer){
+                if(mButton1.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -86,7 +87,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.antwort2button:
-                if(mButton2.getText() == answer){
+                if(mButton2.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -96,7 +97,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.antwort3button:
-                if(mButton3.getText() == answer){
+                if(mButton3.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -106,7 +107,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.antwort4button:
-                if(mButton4.getText() == answer){
+                if(mButton4.getText().equals(answer)){
                     richtigeAntwort();
                 }
                 else{
@@ -125,7 +126,6 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
             public void run() {
                 for (Button b : buttons) {
                     b.setBackgroundDrawable(defaultBackground);
-                    mTextView.setTypeface(null, Typeface.BOLD);
                     b.setClickable(true);
                 }
             }
@@ -145,17 +145,29 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
 
     private void NextQuestion(int num){
         if (num == question.getQuestions().length){
-            //TODO AUFHÖREN
-            questionIndex  = 0;
-            num = 0;
+            //finish quiz
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage(getString(R.string.quiz_finish, correctAnswers, num));
+            builder.setCancelable(true);
+            builder.setNeutralButton(
+                    getString(R.string.finish),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            getActivity().onBackPressed();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
         }
-        mTextView.setText(question.getQuestion(num));
-        mButton1.setText(question.getchoice1(num));
-        mButton2.setText(question.getchoice2(num));
-        mButton3.setText(question.getchoice3(num));
-        mButton4.setText(question.getchoice4(num));
-        answer = question.getCorrectAnswer(num);
-        answerIndex = question.getCorrectAnswerIndex(num);
+        else {
+            mTextView.setText(question.getQuestion(num));
+            mButton1.setText(question.getchoice1(num));
+            mButton2.setText(question.getchoice2(num));
+            mButton3.setText(question.getchoice3(num));
+            mButton4.setText(question.getchoice4(num));
+            answer = question.getCorrectAnswer(num);
+            answerIndex = question.getCorrectAnswerIndex(num);
+        }
     }
 
 }

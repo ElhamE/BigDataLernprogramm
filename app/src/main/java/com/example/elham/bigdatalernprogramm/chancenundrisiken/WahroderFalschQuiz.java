@@ -93,7 +93,7 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
         //Is the clicked button the correct answer
         switch (v.getId()){
             case R.id.true_button:
-                if(mTrueButton.getText() == answer){
+                if(mTrueButton.getText().equals(answer)){
                     gibAntwortAus(true);
                 }
                 else{
@@ -102,7 +102,7 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.false_button:
-                if(mFalseButton.getText() == answer){
+                if(mFalseButton.getText().equals(answer)){
                     gibAntwortAus(true);
                 }
                 else{
