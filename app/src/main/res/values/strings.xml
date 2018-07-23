@@ -1,6 +1,6 @@
 <resources>
     <!-- Navigation (allgemein) -->
-    <string name="app_name">BigDataLernprogramm</string>
+    <string name="app_name">Big Data-Lernprogramm</string>
     <string name="header_title">Bitte wähle eine Lerneinheit aus.</string>
     <string name="definition">Big Data: Begriffsklärung</string>
     <string name="challenges">Big Data in der Praxis</string>
@@ -29,27 +29,30 @@
 
     <!-- Text für Begriffsklärungsmodul -->
     <string name="VModell_introduction">
-        In den letzten Jahrzehnten hat sich das Internet von einem Forschungsnetz zu einem weltumspannenden Kommunikationsnetz entwickelt. Während dieser Zeitspanne sind eine Vielzahl von Diensten und Anwendungen entstanden, die insbesondere auch auf mobilen Endgeräten nicht mehr aus dem alltäglichen Leben wegzudenken sind. Laut einer aktuellen Studie der International Telecommunication Union (ITU) [1] gibt es derzeit circa sechs Milliarden Mobilfunkteilnehmer, was einem Prozentsatz von 85,7 der Weltbevölkerung entspricht. Der Prozentsatz der aktiven mobilen Teilnehmer mit Zugang zu Breitband-Netzen beläuft sich immerhin noch auf 15,7 Prozent der Weltbevölkerung oder 1,1 Milliarden Menschen. Inklusive Haushalten mit kabelgebundenen Internetanschluss nutzen 32,5 Prozent der Weltbevölkerung oder 2,3 Milliarden Menschen das Internet.
+        Die Bezeichnung „Big Data“ besitzt derzeit noch keine allgemeine Definition. Ein üblicher Ansatz zur Charakterisierung dieses Begriffs ist das sogenannte "V-Modell".\nDieses soll nicht nur technische Aspekte berücksichtigen , da es falsch wäre, Big Data nur darauf zu beschränken, sondern auch die rechtlichen und gesellschaftlichen Auswirkungen betrachten, die dieses Phänomen mit sich bringt.
     </string>
     <string name="VModell_title1">Volume</string>
     <string name="VModell_title2">Velocity</string>
     <string name="VModell_title3">Variety</string>
-    <string name="VModell_title4">Veracity</string>
-    <string name="VModell_title5">Value</string>
+    <string name="VModell_title4">Value</string>
     <string name="VModell_description1">
-        Bla
+        •	beschreibt das Ausmaß an Daten, die heutzutage gespeichert und verarbeitet werden müssen\n\n
+        •	die Gesamtheit der Daten, die jemals erzeugt, gespeichert und kopiert worden ist, beträgt heutzutage 30 Zettabyte (ZB)\n\n
+        •	nur zum Vergleich: ein herkömmliches Smartphone hat einen internen Speicher von 64 Gigabyte (GB); also fast 500 Milliarden mal mehr davon\n\n
+        •	diese Datenmenge wird sich in sieben Jahren fast verdoppeln (Quelle: Gartner)
     </string>
     <string name="VModell_description2">
-        Blub
+        •	repräsentiert die Geschwindigkeit, mit der Daten sich verändern und verarbeitet werden müssen\n\n
+        •	die Daten sollen bei ihrer Erfassung ausgewertet und auf diese Analysen soll möglichst in Echtzeit reagiert werden
     </string>
     <string name="VModell_description3">
-
+        •	beschreibt die Verschiedenheit der Daten bezüglich ihrer Beschaffenheit\n\n
+        •	Daten können nicht nur unterschiedliche Inhalte haben, sondern auch aus unterschiedlichen Quellen stammen (z.B. Twitter- und Wetterdaten)\n\n
+        •	außerdem sind sie unterschiedlich strukturiert; Z.B. hat eine Videodatei eine andere Struktur als ein Chatverlauf
     </string>
     <string name="VModell_description4">
-
-    </string>
-    <string name="VModell_description5">
-
+        •	erst durch die Verarbeitung und Analyse kann der finanzielle Wert von Daten ausgeschöpft werden\n\n
+        •	des Weiteren können bestimmte Daten (z.B. Personendaten) einen datenschutzrelevanten Stellenwert haben
     </string>
 
     <string name="Begriffsabgrenzung_introduction">
@@ -68,12 +71,12 @@
         Blob
     </string>
 
-    <string name="falscheAntwort" formatted="true">Falsch! Die richtige Antwort lautet %1$s.</string>
+    <string name="falscheAntwort" formatted="true">Falsch! Die richtige Antwort lautet \"%1$s\".</string>
     <string name="richtigeAntwort">Das ist korrekt!</string>
     <string name="quiz_introduction">
-        Der VfB wollte sich gegenüber dem Rundfunksender nicht zu dem Bericht äußern. „Momentan bin ich in Stuttgart. Dort bin ich glücklich. Ich weiß noch nicht, wo ich in Zukunft spiele“, hatte Pavard am Mittwoch noch gegenüber Medienvertretern in seiner Heimat bei den Feierlichkeiten zum WM-Sieg gesagt.
-Als Nachfolger sollen die Stuttgarter laut der „Bild“-Zeitung Interesse an einem Weltmeister von 2014 haben. Demnach könnte Benedikt Höwedes (30), der nach seiner Leihe zu Juventus Turin jüngst zum FC Schalke 04 zurückkehrte, die entstehende Lücke im VfB-Kader füllen. Zur kompletten News.
+        erst durch die Verarbeitung und Analyse kann der finanzielle Wert von Daten ausgeschöpft werden
     </string>
+    <string name="quiz_finish" formatted="true">Du hast %1$d von %2$d Fragen richtig beantwortet.</string>
 
 
 
@@ -82,6 +85,7 @@ Als Nachfolger sollen die Stuttgarter laut der „Bild“-Zeitung Interesse an e
         Willkommen!
     </string>
     <string name="startQuiz">Beginne mit dem Quiz</string>
+    <string name="finish" formatted="true">Beende das Quiz.</string>
     <string name="joker">Streiche zwei falsche Antworten</string>
 
 </resources>

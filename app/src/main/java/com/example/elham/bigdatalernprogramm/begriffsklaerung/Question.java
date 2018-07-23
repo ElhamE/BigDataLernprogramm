@@ -10,18 +10,24 @@ import java.util.Arrays;
 public class Question {
 
     private String questions[] = {
-            "Which is a Programming Language?",
-            "Programming language COBOL works best for use in?"
+            "Das V-Modell ist ÜBERWIEGEND ... orientiert.",
+            "Mit Big Data sind Daten gemeint, die ... ",
+            "Wann entfalten Daten ihr finanzielles Potenzial?",
+            "Welcher relevante Aspekt von Big Data wird durch das V-Modell eher weniger berücksichtigt?"
     };
 
     private String choices[][] = {
-            {"HTML", "CSS", "Vala", "PHP"},
-            {"Siemens Applications", "Student Applications", "Social Applications", "Commercial Applications"}
+            {"datenschutz-", "technisch", "mathematisch", "soziologisch"},
+            {"enorm, strukturiert & schnell verarbeitbar sind", "enorm, unstrukturiert & schnell verarbeitbar sind", "schnell verhandelbar, heterogen und enorm sind", "schnell verarbeitbar, heterogen und enorm sind"},
+            {"bei ihrer Erzeugung", "bei ihrer Erfassung", "bei ihrer Verkauf", "bei ihrer Analyse"},
+            {"soziale Auswirkungen", "Umweltschutz", "technische Herausforderungen", "der finanzielle Stellenwert von Daten"}
     };
 
     private String correctAnswer[] = {
-            "PHP",
-            "Commercial Applications"
+            "technisch",
+            "schnell verarbeitbar, heterogen und enorm sind",
+            "bei ihrer Analyse",
+            "soziale Auswirkungen"
     };
 
     public String[] getQuestions(){

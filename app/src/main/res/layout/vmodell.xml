@@ -15,8 +15,7 @@
             android:id="@+id/introduction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/VModell_introduction"/>
@@ -34,8 +33,7 @@
             android:id="@+id/volumeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/VModell_description1"/>
@@ -53,8 +51,7 @@
             android:id="@+id/velocityDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/VModell_description2"/>
@@ -72,14 +69,12 @@
             android:id="@+id/varietyDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/VModell_description3"/>
-
         <TextView
-            android:id="@+id/veracityTitle"
+            android:id="@+id/valueTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="50sp"
@@ -88,32 +83,13 @@
             android:text="@string/VModell_title4"/>
 
         <TextView
-            android:id="@+id/veracityDescription"
+            android:id="@+id/valueDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
             android:text="@string/VModell_description4"/>
 
-        <TextView
-            android:id="@+id/valueTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="@string/VModell_title5"/>
-
-        <TextView
-            android:id="@+id/valueDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
-            android:textSize="20sp"
-            android:justificationMode="inter_word"
-            android:text="@string/VModell_description5"/>
     </LinearLayout>
 </ScrollView>

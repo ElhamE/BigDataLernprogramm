@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
-    private boolean datenschutzquizPicked;
+    //flag for disabling the back key
+    private boolean isDatenschutzquizPicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     //disable back key if Datenschutzquiz-Modul is picked
     @Override
     public void onBackPressed() {
-        if (!datenschutzquizPicked){
+        if (!isDatenschutzquizPicked){
             super.onBackPressed();
         }
     }
@@ -73,23 +74,23 @@ public class MainActivity extends AppCompatActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_definition:
-                datenschutzquizPicked = false;
+                isDatenschutzquizPicked = false;
                 fragmentClass = BegriffsklaerungMenu.class;
                 break;
             case R.id.nav_challenges:
-                datenschutzquizPicked = false;
+                isDatenschutzquizPicked = false;
                 fragmentClass = PraxisMenu.class;
                 break;
             case R.id.nav_dataquiz:
-                datenschutzquizPicked = true;
+                isDatenschutzquizPicked = true;
                 fragmentClass = Datenschutzquiz.class;
                 break;
             case R.id.nav_chancesrisks:
-                datenschutzquizPicked = false;
+                isDatenschutzquizPicked = false;
                 fragmentClass = ChancenUndRisikenMenu.class;
                 break;
             default:
-                datenschutzquizPicked = false;
+                isDatenschutzquizPicked = false;
                 fragmentClass = BegriffsklaerungMenu.class;
         }
 

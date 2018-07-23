@@ -85,7 +85,7 @@
             android:textSize="50sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title4"/>
+            android:text="bla"/>
 
         <TextView
             android:id="@+id/veracityDescription"
@@ -95,7 +95,7 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description4"/>
+            android:text="bla"/>
 
         <TextView
             android:id="@+id/valueTitle"
@@ -104,7 +104,7 @@
             android:textSize="50sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="@string/VModell_title5"/>
+            android:text="bla"/>
 
         <TextView
             android:id="@+id/valueDescription"
@@ -114,6 +114,6 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:justificationMode="inter_word"
-            android:text="@string/VModell_description5"/>
+            android:text="bla"/>
     </LinearLayout>
 </ScrollView>
