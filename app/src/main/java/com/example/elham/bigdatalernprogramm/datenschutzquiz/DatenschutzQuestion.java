@@ -36,7 +36,7 @@ public class DatenschutzQuestion {
     };
 
     private String correctAnswer[] = {
-            "Maßnahmen zum Schutz personenbezogener Daten",
+            "Maßnahmen zum Schutz vor unberechtigtem Datenzugriff",
             "wenn personenbezogene Daten verarbeitet werden",
             "Daten, die zur (in)direkten Identifikation von Menschen dienen",
             "Zweckbindung bei allen Datenanalysen",
@@ -48,7 +48,7 @@ public class DatenschutzQuestion {
     };
     //TODO verbessern
     private String wrongAnswers[][] = {
-            {"Ein Synonym für \"Datenschutz\".", "Maßnahmen zum Schutz vor unberechtigtem Datenzugriff", "Gesetze zum Schutz personenbezogener Daten"},
+            {"Ein Synonym für \"Datenschutz\".", "Maßnahmen zum Schutz personenbezogener Daten", "Gesetze zum Schutz personenbezogener Daten"},
             {"wenn der Betroffene dies ausdrücklich mitteilt", "immer", "wenn die AGB dies zulässt"},
             {"Daten zur (in)direkten Identifikation von allen Lebewesen dienen", "Daten, die zum persönlichen Eigentum zählen", "Social-Media-Daten"},
             {"die Datenmenge muss dem Zweck angemessen sein", "transparente Verarbeitung für die Betroffenen", "personenbezogenen Daten müssen aktuell und richtig sein"},

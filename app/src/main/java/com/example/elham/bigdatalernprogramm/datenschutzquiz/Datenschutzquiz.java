@@ -7,7 +7,6 @@ package com.example.elham.bigdatalernprogramm.datenschutzquiz;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -35,6 +34,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     private int answerIndex;
     private int questionIndex;
     private int jokerCounter;
+    private String rang;
 
     private int anzahlKorrekterAntworten;
 
@@ -104,17 +104,20 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         NextQuestion(questionIndex);
     }
 
-    private void richtigeAntwort(){
-        ++anzahlKorrekterAntworten;
-        String loesungssatz = getString(R.string.richtigeAntwort);
-        mFrageLoesungText.setText(loesungssatz);
-        mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);
-    }
-
-    private void falscheAntwort(){
-        String loesungssatz = getString(R.string.falscheAntwort, answer);
-        mFrageLoesungText.setText(loesungssatz);
-        mFrageLoesungText.setTypeface(null, Typeface.BOLD_ITALIC);
+    private void gibAntwortAus(){
+        String[] solutionArray = getResources().getStringArray(R.array.lösungssätze);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage(solutionArray[questionIndex]);
+        builder.setCancelable(true);
+        builder.setNeutralButton(
+                getString(R.string.proceed),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
@@ -129,44 +132,41 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
             //Is the clicked button the correct answer
             case R.id.antwort1button:
                 if(mButton1.getText().equals(answer)){
-                    richtigeAntwort();
+                    ++anzahlKorrekterAntworten;
                 }
                 else{
-                    falscheAntwort();
                     mButton1.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
             case R.id.antwort2button:
                 if(mButton2.getText().equals(answer)){
-                    richtigeAntwort();
+                    ++anzahlKorrekterAntworten;
                 }
                 else{
-                    falscheAntwort();
                     mButton2.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
             case R.id.antwort3button:
                 if(mButton3.getText().equals(answer)){
-                    richtigeAntwort();
+                    ++anzahlKorrekterAntworten;
                 }
                 else{
-                    falscheAntwort();
                     mButton3.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
 
             case R.id.antwort4button:
                 if(mButton4.getText().equals(answer)){
-                    richtigeAntwort();
+                    ++anzahlKorrekterAntworten;
                 }
                 else{
-                    falscheAntwort();
                     mButton4.setBackgroundResource(R.color.colorFalse);
                 }
                 break;
         }
+        gibAntwortAus();
         //Show the correct answer and wait
         Button answerButton = buttons[answerIndex];
         answerButton.setBackgroundResource(R.color.colorCorrect);
@@ -178,14 +178,13 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
             public void run() {
                 for (Button b : buttons) {
                     b.setBackgroundDrawable(defaultBackground);
-                    mFrageLoesungText.setTypeface(null, Typeface.BOLD);
                     b.setClickable(true);
                     mJokerButton.setClickable(true);
                 }
             }
         }, 3000);
         //wait until the reset ends and continue the quiz
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(3000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 //do nothing
@@ -205,7 +204,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         if (num == question.getQuestions().length){
             //finish quiz
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setMessage(getString(R.string.quiz_finish, anzahlKorrekterAntworten, num));
+            builder.setMessage(getString(R.string.quiz_finish, anzahlKorrekterAntworten, num) +"\n"+rang);
             builder.setCancelable(true);
             builder.setNeutralButton(
                     getString(R.string.finish),
@@ -231,24 +230,23 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     }
 
     private String werteAntwortenAus() {
-        String result = "Dein Rang: ";
         int anzahlAntworten = question.getQuestions().length;
         if (anzahlKorrekterAntworten == anzahlAntworten){
-            result += "Skynet, bist du's?";
+            rang = "Dein Rang: Skynet, bist du's?";
         }
         else if (anzahlKorrekterAntworten >= (anzahlAntworten-5)){
-            result += "Datenschutzexperte";
+            rang = "Dein Rang: Datenschutzexperte";
         }
         else if (anzahlKorrekterAntworten >= (anzahlAntworten/2)){
-            result += "Immerhin etwas";
+            rang = "Dein Rang: Immerhin etwas";
         }
-        else if (anzahlKorrekterAntworten > 0){
-            result += "Hör auf zu raten!";
+        else if (questionIndex > 0){
+            rang = "Dein Rang: Hör auf zu raten!";
         }
         else{
-            result += "Hast du schon angefangen?";
+            rang = "Dein Rang: Hast du schon angefangen?";
         }
-        return result;
+        return rang;
     }
 
 }

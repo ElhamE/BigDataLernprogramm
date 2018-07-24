@@ -121,7 +121,20 @@
         Willkommen!\n\nDies ist ein Quiz der etwas anderen Sorte. Anstatt langweilige Paragraphen und Artikel zu studieren, wird hier geprüft, wie gut du dich mit dem aktuellen Datenschutzrecht auskennst.\n\nAuf diese Weise kannst du dein Wissen spielerisch erweitern und ggf. Missverständnisse ausräumen.\n\nUm dir eine kleine Hilfe zu geben, steht dir ein 50:50-Joker zur Verfügung, den du aber nur %1$dx benutzen kannst.
     </string>
     <string name="startQuiz">Beginne mit dem Quiz</string>
-    <string name="finish" formatted="true">Beende das Quiz.</string>
+    <string name="finish">Beende das Quiz.</string>
+    <string name="proceed">Weiter</string>
     <string name="joker">Streiche zwei falsche Antworten</string>
+
+    <string-array name="lösungssätze">
+        <item>Die Datensicherheit umfasst alle Maßnahmen zum Schutz vor unberechtigtem Datenzugriff.\nSie kann als technische Umsetzung zur Gewährleistung des Datenschutzes verstanden werden.</item>
+        <item>Der Datenschutz greift immer dann, wenn personenbezogene Daten verarbeitet werden. Eine Einwilligung der Betroffenen dafür muss stets erfolgen.</item>
+        <item>Personenbezogene Daten sind alle Daten, mit denen Menschen direkt bzw. indirekt identifiziert werden können (z.B. Geburtsdatum, Adresses, usw.).</item>
+        <item>Da der Datenschutz nur bei der Verarbeitung personenbezogener Daten greift, muss nur hierfür stets der Verwendungszweck angegeben werden.\n\nAnonymisierte Daten sind von dieser Zweckbindung ausgenommen.</item>
+        <item>Explorative Analysen, d.h. Analysen, die kein vordefiniertes Ziel haben und mit denen man neue Erkenntnisse aus Daten gewinnen möchte, sind nicht erlaubt, da das Gebot der Zweckbindung verletzt wird.\n\nDies stellt einen starken Einschnitt für Big Data-Anwender dar.</item>
+        <item>Sofern dies im Vorhinein nicht vertraglich geklärt wurde, haben Betroffene keinen Anspruch auf Provision am Umsatz des Verantwortlichen der Datennalyse</item>
+        <item>Die Verordnung gilt für die (automatisierte) Verarbeitung personenbezogener Daten und somit sowohl für den privaten Sektor als auch für öffentliche Verwaltungen.</item>
+        <item>Vor jeder Verarbeitung von personenbezogenen Daten muss der Verantwortliche die Einwilligung von Betroffenenen einholen und diese auch rückrufen können.</item>
+        <item>Zwar bezieht sich das Datenschutzrecht auf personenbezogene Daten, jedoch wird bei u.a. anonymen Daten geprüft, inwieweit (d.h. mit welchem Aufwand) diese wieder deananonymisiert werden können.</item>
+    </string-array>
 
 </resources>

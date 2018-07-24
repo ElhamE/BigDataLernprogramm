@@ -17,8 +17,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:minHeight="70dp"
-            android:padding="10dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
