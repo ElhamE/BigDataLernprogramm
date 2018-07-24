@@ -12,27 +12,51 @@ import java.util.Random;
 public class DatenschutzQuestion {
 
     private String questions[] = {
-            "Bla Bla?",
-            "Bluuuuuuuuuuuuuuuuuuuuuuuuub?",
-            "Bluuuuuuuuuuuuuuuuuuuuuuuuub?"
+            "Was ist \"Datensicherheit\"?",
+            "Wann greift der Datenschutz erst?",
+            "Was sind personenbezogene Daten?",
+            "Welche der folgenden Punkte ist KEINE Verpflichtung für Verantwortliche?",
+            "Welche der folgenden Big Data-Verfahren verstößt gegen das Datenschutzrecht?",
+            "Betroffene haben nicht das Recht auf ...",
+            "Das Datenschutzrecht richtet sich an ...",
+            "Verantwortliche müssen Folgendes mit den Betroffenenen besprechen, bevor es zur Verarbeitung personenbezogener Daten kommen kann:",
+            "Können anonymisierte Daten datenschutzrechtlich einwandfrei durch Big Data-Verfahren verarbeitet werden?"
     };
 
     private String choices[][] = {
-            {"B", "C", "D", "A"},
-            {"Commercial Applications", "Siemens Applications", "Student Applications", "Social Applications"},
-            {"C", "D", "A", "B"},
+            {"Ein Synonym für \"Datenschutz\".", "Maßnahmen zum Schutz personenbezogener Daten", "Maßnahmen zum Schutz vor unberechtigtem Datenzugriff", "Gesetze zum Schutz personenbezogener Daten"},
+            {"wenn der Betroffene dies ausdrücklich mitteilt", "wenn personenbezogene Daten verarbeitet werden", "immer", "wenn die AGB dies zulässt"},
+            {"Daten zur (in)direkten Identifikation von allen Lebewesen dienen", "Daten, die zur (in)direkten Identifikation von Menschen dienen", "Daten, die zum persönlichen Eigentum zählen", "Social-Media-Daten"},
+            {"Zweckbindung bei allen Datenanalysen", "die Datenmenge muss dem Zweck angemessen sein", "transparente Verarbeitung für die Betroffenen", "personenbezogenen Daten müssen aktuell und richtig sein"},
+            {"Big Data mit künstlicher Intelligenz", "explorative Analysen", "Analysen mit anonymisierten Daten", "zweckgebundene Analysen"},
+            {"Widerrufung der Einwilligung zur Datenverarbeitung", "Auskunftsrecht über die Verwendungszwecke", "Anspruch auf Löschung", "einen Anspruch auf Provision am Umsatz"},
+            {"Rechtssubjekte, die Daten verarbeiten", "Organisationen, die personenbezogene Daten verarbeiten", "private Unternehmen, die personenbezogene Daten verarbeiten", "Unternehmen und Verwaltungen"},
+            {"die Höhe der Provision", "die Höhe des Schadensersatzes", "Benennung des Betroffenen zum Datenschutzbeauftragten", "eine Einwilligung zur Datenverabeitung"},
+            {"Jein", "Nein", "das hängt von der Datenmenge ab", "Ja"}
     };
 
     private String correctAnswer[] = {
-            "C",
-            "Commercial Applications",
-            "C"
+            "Maßnahmen zum Schutz personenbezogener Daten",
+            "wenn personenbezogene Daten verarbeitet werden",
+            "Daten, die zur (in)direkten Identifikation von Menschen dienen",
+            "Zweckbindung bei allen Datenanalysen",
+            "explorative Analysen",
+            "einen Anspruch auf Provision am Umsatz",
+            "Organisationen, die personenbezogene Daten verarbeiten",
+            "eine Einwilligung zur Datenverabeitung",
+            "Jein",
     };
     //TODO verbessern
     private String wrongAnswers[][] = {
-            {"A", "B", "D"},
-            {"Siemens Applications", "Student Applications", "Social Applications"},
-            {"A", "B", "D"}
+            {"Ein Synonym für \"Datenschutz\".", "Maßnahmen zum Schutz vor unberechtigtem Datenzugriff", "Gesetze zum Schutz personenbezogener Daten"},
+            {"wenn der Betroffene dies ausdrücklich mitteilt", "immer", "wenn die AGB dies zulässt"},
+            {"Daten zur (in)direkten Identifikation von allen Lebewesen dienen", "Daten, die zum persönlichen Eigentum zählen", "Social-Media-Daten"},
+            {"die Datenmenge muss dem Zweck angemessen sein", "transparente Verarbeitung für die Betroffenen", "personenbezogenen Daten müssen aktuell und richtig sein"},
+            {"Big Data mit künstlicher Intelligenz", "Analysen mit anonymisierten Daten", "zweckgebundene Analysen"},
+            {"Widerrufung der Einwilligung zur Datenverarbeitung", "Auskunftsrecht über die Verwendungszwecke", "Anspruch auf Löschung"},
+            {"Rechtssubjekte, die Daten verarbeiten", "private Unternehmen, die personenbezogene Daten verarbeiten", "Unternehmen und Verwaltungen"},
+            {"die Höhe der Provision", "die Höhe des Schadensersatzes", "Benennung des Betroffenen zum Datenschutzbeauftragten"},
+            {"Nein", "das hängt von der Datenmenge ab", "Ja"}
     };
 
     public String[] getQuestions(){

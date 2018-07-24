@@ -6,6 +6,7 @@ package com.example.elham.bigdatalernprogramm.datenschutzquiz;
  */
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,11 +20,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.elham.bigdatalernprogramm.MainActivity;
 import com.example.elham.bigdatalernprogramm.R;
 
 public class Datenschutzquiz extends Fragment implements View.OnClickListener {
 
-    private static final int JOKER_LIMIT = 3;
+    private static final int JOKER_LIMIT = 2;
 
     Button mButton1, mButton2, mButton3, mButton4, mJokerButton;
     TextView mFrageLoesungText, mRangText;
@@ -49,7 +51,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
         //introduction dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(getString(R.string.Datenschutzquiz_introduction));
+        builder.setMessage(getString(R.string.Datenschutzquiz_introduction, JOKER_LIMIT));
         builder.setCancelable(true);
         builder.setNeutralButton(
                 getString(R.string.startQuiz),
@@ -196,34 +198,48 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
 
 
     private void NextQuestion(int num){
-        if (num == question.getQuestions().length){
-            //TODO AUFHÖREN
-            questionIndex  = 0;
-            num = 0;
-        }
         //enable the joker if limit is not reached
         if (jokerCounter < JOKER_LIMIT){
             mJokerButton.setEnabled(true);
         }
-        mRangText.setText(werteAntwortenAus());
-        mFrageLoesungText.setText(question.getQuestion(num));
-        mButton1.setText(question.getchoice1(num));
-        mButton2.setText(question.getchoice2(num));
-        mButton3.setText(question.getchoice3(num));
-        mButton4.setText(question.getchoice4(num));
-        answer = question.getCorrectAnswer(num);
-        answerIndex = question.getCorrectAnswerIndex(num);
+        if (num == question.getQuestions().length){
+            //finish quiz
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage(getString(R.string.quiz_finish, anzahlKorrekterAntworten, num));
+            builder.setCancelable(true);
+            builder.setNeutralButton(
+                    getString(R.string.finish),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+        else{
+            mRangText.setText(werteAntwortenAus());
+            mFrageLoesungText.setText(question.getQuestion(num));
+            mButton1.setText(question.getchoice1(num));
+            mButton2.setText(question.getchoice2(num));
+            mButton3.setText(question.getchoice3(num));
+            mButton4.setText(question.getchoice4(num));
+            answer = question.getCorrectAnswer(num);
+            answerIndex = question.getCorrectAnswerIndex(num);
+        }
     }
 
     private String werteAntwortenAus() {
         String result = "Dein Rang: ";
-        if (anzahlKorrekterAntworten == 15){
+        int anzahlAntworten = question.getQuestions().length;
+        if (anzahlKorrekterAntworten == anzahlAntworten){
             result += "Skynet, bist du's?";
         }
-        else if (anzahlKorrekterAntworten >= 10){
+        else if (anzahlKorrekterAntworten >= (anzahlAntworten-5)){
             result += "Datenschutzexperte";
         }
-        else if (anzahlKorrekterAntworten >= 5){
+        else if (anzahlKorrekterAntworten >= (anzahlAntworten/2)){
             result += "Immerhin etwas";
         }
         else if (anzahlKorrekterAntworten > 0){

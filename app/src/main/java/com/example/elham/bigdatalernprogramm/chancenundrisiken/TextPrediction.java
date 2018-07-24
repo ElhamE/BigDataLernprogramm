@@ -56,8 +56,8 @@ public class TextPrediction extends Fragment {
         try {
             String url = "https://api.applymagicsauce.com/auth";
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("customer_id", 3903);
-            jsonBody.put("api_key", "vm7ip97edidg0e0sp5olrl5mro");
+            jsonBody.put("customer_id", 3908);
+            jsonBody.put("api_key", "tes11qfav1vtu17nnpdik3o9n3");
             final String requestBody = jsonBody.toString();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

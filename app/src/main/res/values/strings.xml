@@ -117,8 +117,8 @@
 
 
     <!-- Text für Datenschutzmodul -->
-    <string name="Datenschutzquiz_introduction">
-        Willkommen!
+    <string name="Datenschutzquiz_introduction" formatted="true">
+        Willkommen!\n\nDies ist ein Quiz der etwas anderen Sorte. Anstatt langweilige Paragraphen und Artikel zu studieren, wird hier geprüft, wie gut du dich mit dem aktuellen Datenschutzrecht auskennst.\n\nAuf diese Weise kannst du dein Wissen spielerisch erweitern und ggf. Missverständnisse ausräumen.\n\nUm dir eine kleine Hilfe zu geben, steht dir ein 50:50-Joker zur Verfügung, den du aber nur %1$dx benutzen kannst.
     </string>
     <string name="startQuiz">Beginne mit dem Quiz</string>
     <string name="finish" formatted="true">Beende das Quiz.</string>
