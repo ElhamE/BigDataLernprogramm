@@ -148,7 +148,7 @@ public class TestePraxiswissen extends Fragment implements View.OnClickListener 
             //finish quiz
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             builder.setMessage(getString(R.string.quiz_finish, correctAnswers, num));
-            builder.setCancelable(true);
+            builder.setCancelable(false);
             builder.setNeutralButton(
                     getString(R.string.finish),
                     new DialogInterface.OnClickListener() {

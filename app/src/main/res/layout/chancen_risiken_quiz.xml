@@ -16,11 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:minHeight="70dp"
-            android:paddingLeft="10dp"
             android:textStyle="bold"
-            android:text="@string/quiz_introduction"
             android:textSize="18sp" />
 
         <LinearLayout

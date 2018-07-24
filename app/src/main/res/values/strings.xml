@@ -137,4 +137,22 @@
         <item>Zwar bezieht sich das Datenschutzrecht auf personenbezogene Daten, jedoch wird bei u.a. anonymen Daten geprüft, inwieweit (d.h. mit welchem Aufwand) diese wieder deananonymisiert werden können.</item>
     </string-array>
 
+    <!-- Text für Chancen-Risiken-Modul -->
+    <string name="wahr_oder_falsch_introduction">
+        Willkommen!\n\nHier geht es darum, eine Aussage über eine Big Data-Umsetzung entweder als "Wahrheit" (d.h. realistisch) oder als "Lüge" zu kennzeichnen.\n\nHiermit soll geprüft, ob du das heutige Potenzial von Big Data richtig einschätzen kannst.
+    </string>
+
+    <string-array name="auflösung">
+        <item>Die Datensicherheit umfasst alle Maßnahmen zum Schutz vor unberechtigtem Datenzugriff.\nSie kann als technische Umsetzung zur Gewährleistung des Datenschutzes verstanden werden.</item>
+        <item>Der Datenschutz greift immer dann, wenn personenbezogene Daten verarbeitet werden. Eine Einwilligung der Betroffenen dafür muss stets erfolgen.</item>
+        <item>Personenbezogene Daten sind alle Daten, mit denen Menschen direkt bzw. indirekt identifiziert werden können (z.B. Geburtsdatum, Adresses, usw.).</item>
+        <item>Da der Datenschutz nur bei der Verarbeitung personenbezogener Daten greift, muss nur hierfür stets der Verwendungszweck angegeben werden.\n\nAnonymisierte Daten sind von dieser Zweckbindung ausgenommen.</item>
+        <item>Explorative Analysen, d.h. Analysen, die kein vordefiniertes Ziel haben und mit denen man neue Erkenntnisse aus Daten gewinnen möchte, sind nicht erlaubt, da das Gebot der Zweckbindung verletzt wird.\n\nDies stellt einen starken Einschnitt für Big Data-Anwender dar.</item>
+        <item>Sofern dies im Vorhinein nicht vertraglich geklärt wurde, haben Betroffene keinen Anspruch auf Provision am Umsatz des Verantwortlichen der Datennalyse</item>
+        <item>Die Verordnung gilt für die (automatisierte) Verarbeitung personenbezogener Daten und somit sowohl für den privaten Sektor als auch für öffentliche Verwaltungen.</item>
+        <item>Vor jeder Verarbeitung von personenbezogenen Daten muss der Verantwortliche die Einwilligung von Betroffenenen einholen und diese auch rückrufen können.</item>
+        <item>Zwar bezieht sich das Datenschutzrecht auf personenbezogene Daten, jedoch wird bei u.a. anonymen Daten geprüft, inwieweit (d.h. mit welchem Aufwand) diese wieder deananonymisiert werden können.</item>
+    </string-array>
+
+
 </resources>

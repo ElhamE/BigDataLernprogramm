@@ -43,8 +43,8 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
         super.onActivityCreated(savedInstanceState);
         //introduction dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(getString(R.string.Datenschutzquiz_introduction));
-        builder.setCancelable(true);
+        builder.setMessage(getString(R.string.wahr_oder_falsch_introduction));
+        builder.setCancelable(false);
         builder.setNeutralButton(
                 getString(R.string.startQuiz),
                 new DialogInterface.OnClickListener() {
@@ -69,15 +69,19 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
     }
 
     private void gibAntwortAus(boolean gewaehlteAntwort){
-        String loesungssatz;
-        if (gewaehlteAntwort){
-            loesungssatz = getString(R.string.richtigeAntwort);
-        }
-        else {
-            loesungssatz = getString(R.string.falscheAntwort);
-        }
-        mTextView.setText(loesungssatz);
-        mTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+        String[] solutionArray = getResources().getStringArray(R.array.auflösung);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage(solutionArray[questionIndex]);
+        builder.setCancelable(false);
+        builder.setNeutralButton(
+                getString(R.string.proceed),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 
@@ -135,15 +139,26 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
 
     private void NextQuestion(int num){
         if (num == question.getQuestions().length){
-            //TODO AUFHÖREN
-            questionIndex  = 0;
-            num = 0;
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage(getString(R.string.finish));
+            builder.setCancelable(false);
+            builder.setNeutralButton(
+                    "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            getActivity().onBackPressed();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
         }
-        mTextView.setText(question.getQuestion(num));
-        mTrueButton.setText(question.getchoice1(num));
-        mFalseButton.setText(question.getchoice2(num));
-        answer = question.getCorrectAnswer(num);
-        answerIndex = question.getCorrectAnswerIndex(num);
+        else{
+            mTextView.setText(question.getQuestion(num));
+            mTrueButton.setText(question.getchoice1(num));
+            mFalseButton.setText(question.getchoice2(num));
+            answer = question.getCorrectAnswer(num);
+            answerIndex = question.getCorrectAnswerIndex(num);
+        }
     }
 
 }
