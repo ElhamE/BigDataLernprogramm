@@ -173,13 +173,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         //Show the correct answer and wait
         Button answerButton = buttons[answerIndex];
         answerButton.setBackgroundResource(R.color.colorCorrect);
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                gibAntwortAus();
-            }
-        }, 1000);
+        gibAntwortAus();
     }
 
 
