@@ -22,7 +22,7 @@ public class Question {
     private String choices[][] = {
             {"datenschutz-", "technisch", "mathematisch", "soziologisch"},
             {"enorm, strukturiert & schnell verarbeitbar sind", "enorm, unstrukturiert & schnell verarbeitbar sind", "schnell verhandelbar, heterogen und enorm sind", "schnell verarbeitbar, heterogen und enorm sind"},
-            {"bei ihrer Erzeugung", "bei ihrer Erfassung", "bei ihrer Verkauf", "bei ihrer Analyse"},
+            {"bei ihrer Erzeugung", "bei ihrer Erfassung", "bei ihrem Verkauf", "bei ihrer Analyse"},
             {"soziale Auswirkungen", "Umweltschutz", "technische Herausforderungen", "der finanzielle Stellenwert von Daten"},
             {"Konkurrent", "technische Umsetzung", "Erweiterung", "Synonym"},
             {"Ja", "Unter anderem", "Manchmal", "Nein"},

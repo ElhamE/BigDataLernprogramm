@@ -10,18 +10,33 @@ import java.util.Arrays;
 public class WahroderFalschQuestion {
 
     private String questions[] = {
-            "Which is a Programming Language?",
-            "Programming language COBOL works best for use in?"
+            "Mithilfe von Behörden-, Unternehmens- und Social Media-Daten kann ein \"sozialer Score\" ermittelt werden, der das Verhalten von Bürgern in der Gesellschaft bewertet. \"Brave\" Bürger werden belohnt und \"schlechte\" bestraft.",
+            "Die Polizei in Washington D.C. besitzt eine \"Precrime-Abteilung\", die Big Data nutzt, um den Zeitpunkt und die potentiellen Verursacher von schweren Straftaten zu ermitteln und diese in Gewahrsam zu nehmen.",
+            "Die Sensordaten von Fahrzeugen werden u.a. verwertet, um Unfälle zu verhindern, Fahrtwege zu optimieren, den Treibstoffverbrauch zu verbessern und die Fahrer zu beurteilen.",
+            "Im Zuge der fortgeschrittenen Datenanalysen schreiben einige US-Unternehmen ihren Angestellten vor, ihre Gesundheitsdaten (z.B. Blutzucker- und Körperfettwerte) preiszugeben und bitten diese bei Überschreitung von Grenzwerten zur Kasse.",
+            "Patientdaten werden gründlich analysiert, um Profile zu erstellen und spezielle Pflegeoboter damit lernen zu lassen. Diese Roboter ersetzen dann die menschlichen Fachkräfte für die entsprechenden Patienten.",
+            "Das israelische Militär hat einen unbemannten Kampfroboter entwickelt, der mittels KI selbst im Eifer des Gefechts Freund von Feind unterscheiden kann. Dafür lernt er kontinuierlich, indem ihm zusätzlich zu seinen Sensordaten Daten von außen zugespeist werden.",
+            "Für Wahlkampf- und Marketingzwecke werden Big Data-instrumente verwendet, die eine personalisierte und zielgerichtete Kontaktaufnahme mit Individuen und Gruppen ermöglicht. Dafür werden die gegebenen Daten über eine Person ausgewertet, woraufhin dieser einer \"Kategorie\" zugeordnet wird."
     };
 
     private String choices[][] = {
-            {"HTML", "PHP"},
-            {"Siemens Applications", "Commercial Applications"}
+            {"So etwas wird bereits geplant.", "Setz' den Aluhut ab!"},
+            {"Das hört sich zwar unrealistisch an, aber existiert tatsächlich.", "Das ist doch aus einem Science Fiction-Film geklaut."},
+            {"Hört sich plausibel an.", "Das ist illegal."},
+            {"Jo", "Humbug!"},
+            {"Dies ist eine Maßnahme zur Bekämpfung des Pflegenotstands.", "Schön wär's!"},
+            {"Ja, das ist wahr!", "Da kann nicht einmal der Terminator mithalten."},
+            {"Das ist ein bewährtes Verfahren.", "...und ich bin der Kaiser von China."}
     };
 
     private String correctAnswer[] = {
-            "PHP",
-            "Commercial Applications"
+            "So etwas wird bereits geplant.",
+            "Das ist doch aus einem Science Fiction-Film geklaut.",
+            "Hört sich plausibel an.",
+            "Jo",
+            "Schön wär's!",
+            "Da kann nicht einmal der Terminator mithalten.",
+            "Das ist ein bewährtes Verfahren."
     };
 
     public String[] getQuestions(){

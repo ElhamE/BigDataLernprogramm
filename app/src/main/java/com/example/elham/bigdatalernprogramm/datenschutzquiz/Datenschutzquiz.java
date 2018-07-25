@@ -26,8 +26,9 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
 
     private static final int JOKER_LIMIT = 2;
 
-    Button mButton1, mButton2, mButton3, mButton4, mJokerButton;
-    TextView mFrageLoesungText, mRangText;
+    private Button mButton1, mButton2, mButton3, mButton4, mJokerButton;
+    private TextView mFrageLoesungText, mRangText;
+    private Drawable defaultBackground;
 
     private DatenschutzQuestion question = new DatenschutzQuestion();
     private String answer;
@@ -75,6 +76,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
         mButton3.setOnClickListener(this);
         mButton4 = getActivity().findViewById(R.id.antwort4button);
         mButton4.setOnClickListener(this);
+        defaultBackground = mButton1.getBackground();
 
         questionIndex = 0;
 
@@ -85,8 +87,6 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 ++jokerCounter;
                 final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
-                final Drawable defaultBackground = mButton4.getBackground();
-
                 //disable the joker for this question
                 mJokerButton.setEnabled(false);
                 //disable two wrong answers
@@ -105,6 +105,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     }
 
     private void gibAntwortAus(){
+        final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
         String[] solutionArray = getResources().getStringArray(R.array.lösungssätze);
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage(solutionArray[questionIndex]);
@@ -114,6 +115,13 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+                        //proceed with the quiz
+                        NextQuestion(++questionIndex);
+                        for (Button b : buttons) {
+                            //reset changes and unlock buttons
+                            b.setBackgroundDrawable(defaultBackground);
+                            b.setClickable(true);
+                        }
                     }
                 });
         AlertDialog alert = builder.create();
@@ -123,11 +131,7 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         final Button[] buttons = {mButton1, mButton2, mButton3, mButton4};
-        //lock the buttons
-        for (Button b : buttons) {
-            b.setClickable(false);
-        }
-        final Drawable defaultBackground = v.getBackground();
+        /*final Drawable defaultBackground = v.getBackground();*/
         switch (v.getId()){
             //Is the clicked button the correct answer
             case R.id.antwort1button:
@@ -166,33 +170,16 @@ public class Datenschutzquiz extends Fragment implements View.OnClickListener {
                 }
                 break;
         }
-        gibAntwortAus();
         //Show the correct answer and wait
         Button answerButton = buttons[answerIndex];
         answerButton.setBackgroundResource(R.color.colorCorrect);
-        mJokerButton.setClickable(false);
-        //reset changes and unlock buttons in a different thread
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                for (Button b : buttons) {
-                    b.setBackgroundDrawable(defaultBackground);
-                    b.setClickable(true);
-                    mJokerButton.setClickable(true);
-                }
+                gibAntwortAus();
             }
-        }, 3000);
-        //wait until the reset ends and continue the quiz
-        new CountDownTimer(3000, 500) {
-
-            public void onTick(long millisUntilFinished) {
-                //do nothing
-            }
-            public void onFinish() {
-                NextQuestion(++questionIndex);
-            }
-        }.start();
+        }, 1000);
     }
 
 

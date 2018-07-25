@@ -22,13 +22,14 @@ import android.widget.TextView;
 import com.example.elham.bigdatalernprogramm.R;
 
 public class WahroderFalschQuiz extends Fragment implements View.OnClickListener {
-    Button mTrueButton, mFalseButton;
-    TextView mTextView;
+    private Button mTrueButton, mFalseButton;
+    private TextView mTextView;
 
     private WahroderFalschQuestion question = new WahroderFalschQuestion();
     private String answer;
     private int answerIndex;
     private int questionIndex;
+    private int correctAnwers;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,6 +70,9 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
     }
 
     private void gibAntwortAus(boolean gewaehlteAntwort){
+        if (gewaehlteAntwort){
+            ++correctAnwers;
+        }
         String[] solutionArray = getResources().getStringArray(R.array.auflösung);
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage(solutionArray[questionIndex]);
@@ -78,6 +82,8 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
+                        //proceed with the quiz
+                        NextQuestion(++questionIndex);
                     }
                 });
         AlertDialog alert = builder.create();
@@ -87,13 +93,6 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        final Button[] buttons = {mTrueButton, mFalseButton};
-        //lock the buttons
-        for (Button b : buttons) {
-            b.setClickable(false);
-        }
-        final Drawable defaultBackground = v.getBackground();
-
         //Is the clicked button the correct answer
         switch (v.getId()){
             case R.id.true_button:
@@ -114,36 +113,16 @@ public class WahroderFalschQuiz extends Fragment implements View.OnClickListener
                 }
                 break;
         }
-        //reset changes and unlock buttons in a different thread
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                for (Button b : buttons) {
-                    b.setClickable(true);
-                }
-            }
-        }, 3000);
-        //wait until the reset ends and continue the quiz
-        new CountDownTimer(3000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                //do nothing
-            }
-            public void onFinish() {
-                NextQuestion(++questionIndex);
-            }
-        }.start();
     }
 
 
     private void NextQuestion(int num){
         if (num == question.getQuestions().length){
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setMessage(getString(R.string.finish));
+            builder.setMessage(getString(R.string.quiz_finish, correctAnwers, question.getQuestions().length));
             builder.setCancelable(false);
             builder.setNeutralButton(
-                    "OK",
+                    getString(R.string.finish),
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             getActivity().onBackPressed();

@@ -21,8 +21,8 @@ import android.widget.TextView;
 import com.example.elham.bigdatalernprogramm.R;
 
 public class TestePraxiswissen extends Fragment implements View.OnClickListener {
-    Button mButton1, mButton2, mButton3, mButton4;
-    TextView mTextView;
+    private Button mButton1, mButton2, mButton3, mButton4;
+    private TextView mTextView;
 
     private Question question = new Question();
     private String answer;
