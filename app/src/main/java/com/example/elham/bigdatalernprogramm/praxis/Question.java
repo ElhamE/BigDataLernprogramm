@@ -12,19 +12,25 @@ public class Question {
     private String questions[] = {
             "Der Teil des Big Data-Prozesses, der üblicherweise am aufwändigsten ist, ist die ...",
             "Kommen herkömmliche Datenverwaltungssysteme mit den Big Data-Anforderungen zurecht?",
-            "Die aus Big Data-Analysen folgendenden Ergebnisse sind stets korrekt"
+            "Die aus Big Data-Analyseergebnisse sind stets korrekt",
+            "Nach der Datenerhebung erfolgt die ...",
+            "Was ist eine Hauptherausforderung bei der Vereinheitlichung von Daten?"
     };
 
     private String choices[][] = {
             {"Interpretation", "Datenanoymisierung", "Datenvorverarbeitung", "Datensicherheit"},
             {"Immer", "Nie", "Ja, wenn den Speicherplatz vergrößert.", "Nicht ganz, denn dafür sind sie nicht ausgerichtet."},
-            {"Ja, da es sich um mathematische Modelle handelt.", "Ja, da die Daten schon vorher von Fehler bereinigt worden sind.", "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden.", "Jein, da es sich um Stichproben handelt."}
+            {"Ja, da es sich um mathematische Modelle handelt.", "Ja, da die Daten schon vorher von Fehler bereinigt worden sind.", "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden.", "Nein, da es sich um Stichproben handelt."},
+            {"Modellierung", "Datensäuberung", "Analyse", "Datenakquisition"},
+            {"die Daten stehen nicht zur Verfügung", "internationale Datenschutzrichtlinien umsetzen", "die relevanten von unwichtign Informationen trennen", "Zusammenführung von Daten aus verschiedenen Quellen"}
     };
 
     private String correctAnswer[] = {
             "Datenvorverarbeitung",
             "Nicht ganz, denn dafür sind sie nicht ausgerichtet.",
-            "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden."
+            "Nein, auch diese Analysergebnisse müssen verifiziert und validiert werden.",
+            "Datensäuberung",
+            "Zusammenführung von Daten aus verschiedenen Quellen"
     };
 
     public String[] getQuestions(){

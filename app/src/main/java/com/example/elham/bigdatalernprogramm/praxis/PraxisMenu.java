@@ -12,9 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.example.elham.bigdatalernprogramm.R;
-import com.example.elham.bigdatalernprogramm.begriffsklaerung.Begriffsabgrenzung;
-import com.example.elham.bigdatalernprogramm.begriffsklaerung.TesteWissen;
-import com.example.elham.bigdatalernprogramm.begriffsklaerung.VModell;
 
 public class PraxisMenu extends ListFragment implements AdapterView.OnItemClickListener {
 
